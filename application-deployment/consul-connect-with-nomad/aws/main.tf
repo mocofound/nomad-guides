@@ -29,6 +29,7 @@ resource "null_resource" "start_catalogue" {
     inline = [
       "sleep 180",
       "nomad job run -address=http://${module.nomadconsul.primary_server_private_ips[0]}:4646 /home/ubuntu/catalogue-with-connect.nomad",
+      "nomad job run -address=http://${module.nomadconsul.primary_server_private_ips[0]}:4646 /home/ubuntu/go-app.nomad",
     ]
 
     connection {
