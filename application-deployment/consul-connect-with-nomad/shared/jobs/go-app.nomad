@@ -39,7 +39,7 @@ job "go-app" {
         network {
           mbits = 10
           port "http" {
-	           static=20536
+	           #static=20536
 	        }
         }
       }
